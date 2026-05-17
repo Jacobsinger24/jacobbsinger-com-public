@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>From Blank Page to Live Site: A Vibe Coder's Field Notes — Jacob Singer</title>
+  <meta name="description" content="Practical notes from designing, building, and shipping a personal website end to end with AI tools, written for non-engineers who want to try the same thing." />
+  <meta name="author" content="Jacob Singer" />
+  <link rel="canonical" href="https://jacobbsinger.com/musings/from-blank-page-to-live-site/" />
+  <meta property="og:title" content="From Blank Page to Live Site: A Vibe Coder's Field Notes" />
+  <meta property="og:description" content="Practical notes from designing, building, and shipping a personal website end to end with AI tools." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://jacobbsinger.com/musings/from-blank-page-to-live-site/" />
+  <meta property="og:site_name" content="jacobbsinger.com" />
+  <meta property="og:image" content="https://jacobbsinger.com/og-card.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Jacob Singer — Enterprise Learnings + Personal AI unlocks." />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="From Blank Page to Live Site: A Vibe Coder's Field Notes" />
+  <meta name="twitter:description" content="Practical notes from designing, building, and shipping a personal website end to end with AI tools." />
+  <meta name="twitter:image" content="https://jacobbsinger.com/og-card.png" />
+  <link rel="icon" href="/favicon.ico?v=2" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=2">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=2">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#6e2310">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="inner">
+      <span>Musings of a Vibe Coder</span>
+      <span>jacobbsinger.com</span>
+      <span id="topbar-date">Est. May 2026</span>
+    </div>
+  </div>
+
+  <nav class="topnav">
+    <div class="inner">
+      <a class="masthead" href="/" aria-label="Home">
+        <span class="j">j.</span>
+        <span class="name">Jacob Singer</span>
+      </a>
+      <ul class="blades" aria-label="Primary">
+        <li><a href="/musings/">Musings</a></li>
+        <li><a href="/#about">About</a></li>
+        <li><a href="/#contact">Contact</a></li>
+      </ul>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle color theme">
+        <span class="icon moon" aria-hidden="true">&#9790;</span>
+        <span class="icon sun" aria-hidden="true">&#9728;</span>
+        <span class="label">Theme</span>
+      </button>
+    </div>
+  </nav>
+
+  <main class="frame">
+
+    <article class="article-page">
+      <a class="back-link" href="/musings/"><span aria-hidden="true">&larr;</span> Back to Musings</a>
+
+      <div class="article-eyebrow"><span class="num">No. 01</span> &middot; Musings of a Vibe Coder &middot; May 2026</div>
+      <h1 class="article-title">From Blank Page to Live Site: <em>A Vibe Coder's Field Notes.</em></h1>
+      <div class="article-meta">
+        <span>By Jacob Singer</span>
+        <span class="dot">&middot;</span>
+        <span>~10 min read</span>
+        <span class="dot">&middot;</span>
+        <span>Published 15 May 2026</span>
+      </div>
+      <div class="article-tags">
+        <a class="article-tag" href="/musings/?tags=personal-ai-learnings">Personal AI Learnings</a>
+        <a class="article-tag" href="/musings/?tags=agents">Agents</a>
+      </div>
+
+      <div class="article-body">
+
+        <p class="preface">Quick preface: this site is a simple blog and contact form. No sensitive data behind it. So everything that follows is calibrated to that kind of low stakes build. If you are shipping anything that handles real user data or payments, the bar is higher and the playbook is different.</p>
+
+        <p>I work in Cloud GTM. While I consider myself to be quite technically capable, and have a foundational understanding of HTML and JavaScript, I am not a software engineer. I have not written production code in my career. But over the last couple of weeks I designed, built, and shipped my own personal website end to end, using AI as the engineer and myself as the director.</p>
+
+        <p>The site is live. It has a custom contact form with spam protection, dark mode, a typography system I picked myself, and it deploys automatically the moment I push a change. The cost was dollars, the time was a few hours (though by the time you read this I bet I've tweaked it more). Five years ago, this would have taken me weeks to get into production with my current responsibilities.</p>
+
+        <p>What follows is what I actually learned doing it. The tools I used, the prompts that worked, the mistakes I made, and the workflow I would recommend if you want to try the same thing.</p>
+
+        <h2>What "vibe coding" actually means</h2>
+
+        <p>Let me name the term first because it sounds cooler than it is. Vibe coding is just building software by telling an AI what you want in plain English and reacting to what it gives back. You do not write the code. You describe the result. The AI writes it, runs it if needed, shows you, and waits for your reaction.</p>
+
+        <p>The skill is not knowing syntax. The skill is knowing what you want, being able to describe it clearly, and being willing to keep going when the first version is wrong.</p>
+
+        <p>That is the entire thing.</p>
+
+        <h2>What I built</h2>
+
+        <p>The site itself is small. One page, four sections (intro, blog list, about, contact). It has light and dark mode. The contact form gets posted to a serverless function with a captcha gate so I do not get drowned in bot mail. The whole thing is hosted free, on its own custom domain.</p>
+
+        <p>Stack, if you care:</p>
+
+        <ul>
+          <li>HTML, CSS, JavaScript (no framework)</li>
+          <li>A serverless function for the contact form</li>
+          <li>Cloudflare Turnstile for the captcha</li>
+          <li>Azure Static Web Apps for hosting (Netlify and Vercel are equally good)</li>
+          <li>GitHub for source control and automated deploys</li>
+        </ul>
+
+        <p>If those words mean nothing to you, that is okay. You can hand the entire stack decision to your AI and it will pick a sensible default. In fact, tell it to always provide you a recommendation and why along with any questions it proposes.</p>
+
+        <h2>The mental model: you are the director</h2>
+
+        <p>The single biggest unlock when working with AI on a build like this is to stop thinking of yourself as a programmer who is bad at code. You are not coding. You are directing a coder.</p>
+
+        <p>The good news is that being a good director is something you already know how to do. You have probably explained a project to a contractor, told a designer what you wanted on a slide, or briefed someone you manage. It is the same job. You communicate intent, you review the result, you give feedback, and you iterate.</p>
+
+        <p>The bad news is that the AI will do exactly what you ask. If your brief is fuzzy, the result is fuzzy. The clearer your intent, the better the output. This is true at the macro level ("I want a personal site that feels like a serious tech professional, not a freelancer template") and at the micro level ("make this paragraph shorter and remove the closing platitude").</p>
+
+        <h2>The tools I actually used</h2>
+
+        <p>You can build a site like this with a surprisingly small toolset. Here is what I used.</p>
+
+        <p><strong>Visual Studio Code with GitHub Copilot.</strong> This was the cockpit. VS Code is a free code editor. Copilot inside it can read your files, edit them for you, run commands, and explain what is happening. Describe a goal and Copilot makes the changes across files on its own.</p>
+
+        <p><strong>A separate AI chat in another window.</strong> I also kept a second AI assistant open for higher level questions. Things like "what is the cleanest hosting option for a personal HTML site in 2026" or "summarize what this CSS file is doing." Some questions are better with a brain that is not currently knee deep in your code.</p>
+
+        <p><strong>A local preview.</strong> A simple way to run your site on your own computer so you can see changes immediately. Python ships with a one line web server. So does Node. Your AI will set this up for you in thirty seconds if you ask.</p>
+
+        <p><strong>Git and GitHub.</strong> Source control sounds intimidating. It is not. It is just a way to save snapshots of your project, share them, and roll back if you break something. Your AI will guide you through every command.</p>
+
+        <p><strong>A hosting service that deploys automatically from GitHub.</strong> Candidly I used Azure Static Web Apps because as a MSFT employee, I get discounts and perks. It also doesn't hurt that Azure is one of the most reliable clouds out there. Netlify and Vercel are just as good and both have generous free tiers. The magic here is that every time you push a change to GitHub, the site updates automatically. You do not upload files. You do not configure servers.</p>
+
+        <p>That is the whole stack. Editor, AI, preview, source control, host. Nothing exotic.</p>
+
+        <h2>The workflow</h2>
+
+        <p>This is the part that took me the longest to get right, and it is the part I would tell anyone starting out.</p>
+
+        <p>The loop is: <strong>describe, preview, react, repeat.</strong></p>
+
+        <p>You describe what you want in plain English. You look at the result. You react to it like a human, not like a code reviewer. You send the next instruction. Then again.</p>
+
+        <p>The mistake I made early was trying to plan the whole site in one giant prompt. It did not work. The AI took a hundred shots in the dark on style choices I had not actually made. The fix was to slow down and run the loop in small bites.</p>
+
+        <p>A real example. Early on I asked the AI to "build me five different style mockups of my personal site, masculine and modern, not corporate." Five mockups came back as standalone files I could open in a browser. I looked at them, picked the one that hit closest, and went back with "I like the typography on mockup four but the color palette on mockup five. Show me three variations that combine them." Three more came back. I picked one. Then I picked apart that one in pieces, paragraph by paragraph.</p>
+
+        <p>By the end I had something that looked like me, not like an AI template.</p>
+
+        <p>There were far more effective ways to attack this from a token preservation perspective, I'll be the first to admit it, again perks. Each build is a chance to harness the power though, you quickly become much more effective with better planning ahead (I did none), or more practice (this I have).</p>
+
+        <h2>Prompts that actually worked</h2>
+
+        <p>Generic prompts produce generic output. Specific prompts produce useful output. Here are patterns I came back to constantly.</p>
+
+        <p><strong>Ask for variations before committing.</strong> Instead of "design my homepage," try "give me five different visual directions for my homepage. Make them genuinely different in tone, not just color swaps. I will pick one and we will iterate from there." This single move saved me hours.</p>
+
+        <p><strong>Reference what you already like.</strong> "Make the typography feel more like Linear or Vercel than like a Medium blog post." The AI knows what those brands look like. Reference points carry more information than adjectives.</p>
+
+        <p><strong>Be explicit about what you are not.</strong> "I am not going for a freelance creative portfolio look. I am a working professional in tech. Lean editorial, lean serious." This pruned a lot of bad directions before they happened.</p>
+
+        <p><strong>Use sensory language for feedback.</strong> "This font feels feminine, I want something more bold and masculine." "This banner is too tall, it crowds the headline." Tell the AI what you feel, not just what is technically wrong. It will translate that to code choices.</p>
+
+        <p><strong>Ask it to show its work in small steps.</strong> "Make this change, show me the result, and wait before doing anything else." Big batches of changes are hard to review. Small ones are easy.</p>
+
+        <h2>Mistakes I made</h2>
+
+        <p>I want to be honest about these because they were the most useful part of the build.</p>
+
+        <p>I chose a font early on that turned out to feel wrong for the persona I was going for. Specifically I picked a fancy serif with calligraphic italic flourishes. It looked elegant on its own but combined with the rest of the page it read more like a wedding invitation than a professional site. I ignored that feeling for two iterations because I had committed to it. The right move was to scrap it the first time it felt off.</p>
+
+        <p><strong>Lesson: trust your gut on the first reaction. If something does not feel right, it does not get more right with more time invested. Tell the AI to throw it out and try again.</strong></p>
+
+        <p>I let the AI run too long without preview. There was a moment where I asked for a series of changes, did not look at them for a few iterations, and ended up with a layout I did not want. Pulling that apart took longer than just stopping every change to look.</p>
+
+        <p><strong>Lesson: previewing is not optional. The cost of looking at the result every time is zero. The cost of not looking is rework.</strong></p>
+
+        <p>I let placeholder content stay too close to production. A stock image of someone who was not me almost made it onto the live site. Catch this stuff early. Search your project for placeholder text and stock assets before you ship.</p>
+
+        <p><strong>Lesson: do a "what would a stranger see" pass before going live. Read the site like you have never been there.</strong></p>
+
+        <p>I spent thirty minutes on a security tangent that turned out to be a non issue. Tooling will scare you with warnings sometimes. Slow down, ask the AI to explain the actual risk, and decide if you care. Often the real risk is much smaller than the warning makes it sound.</p>
+
+        <p><strong>Lesson: not every warning is an emergency. Ask for the plain English version of the risk.</strong></p>
+
+        <h2>Going to production</h2>
+
+        <p>Three things stand between a local prototype and a real site on the internet.</p>
+
+        <p><strong>A domain.</strong> You can buy one in five minutes from any registrar. The standard pattern is firstnamelastname.com. If your name is taken, get creative with a middle initial, your discipline, or a "writes" or "builds" prefix.</p>
+
+        <p><strong>A host.</strong> Pick a free tier from Azure Static Web Apps, Netlify, or Vercel. All three connect to GitHub and redeploy on every push. Setup is roughly ten minutes if you have never done it. Your AI will walk you through the screens.</p>
+
+        <p><strong>DNS.</strong> This is the part that confuses everyone the first time. Once you have a domain and a host, you point your domain at the host using a few DNS records inside your registrar dashboard. The host will tell you exactly what records to add. Copy, paste, save. Wait fifteen minutes. Done.</p>
+
+        <p>For my contact form I added one more piece, a serverless function that takes the form submission and emails it to me. Hosts like Azure Static Web Apps, Netlify, and Vercel all include this in their free tier. The AI wrote the function in about three minutes once I described what I wanted.</p>
+
+        <p>I also added a Cloudflare captcha gate to keep bots out. This is free, takes about ten minutes to set up, and dropped my spam to zero. No doubt if my friends have read this far, that number is no longer 0.</p>
+
+        <h2>The feedback loop is the whole game</h2>
+
+        <p>If I had to compress everything I learned into one line, it would be this: <strong>the quality of your output is determined by how tight your feedback loop is.</strong></p>
+
+        <p>A tight loop looks like: prompt, preview, react in one sentence, prompt again. Cycles of three to five minutes.</p>
+
+        <p>A loose loop looks like: prompt, walk away, come back later, look at twelve changes at once, write a long paragraph of feedback, get back a confused response, repeat.</p>
+
+        <p>The first one builds momentum. The second one kills it. Set up your environment so the loop is short. Have your editor open. Have your preview running. Have a way to take a screenshot. Have your AI ready to listen.</p>
+
+        <h2>What I would tell someone starting</h2>
+
+        <p>A few things I wish I had known on day one.</p>
+
+        <p>You do not need to learn to code to do this. You will pick up tiny amounts of vocabulary as you go and that is enough. The AI handles the rest.</p>
+
+        <p>Start with one small project, not a portfolio overhaul. Build a single page about yourself. That is enough to learn the workflow and produce something real.</p>
+
+        <p>Treat the AI like a junior engineer who is fast, capable, and a little overconfident. Review what it gives you. Push back when it feels wrong. Praise when it nails something and ask it to do more of that.</p>
+
+        <p>Build in public. Push your code to a public GitHub repository so people can see how a working site is structured. It is a free portfolio piece and a free learning resource for the next person doing what you are doing.</p>
+
+        <p>Get the boring stuff out of the way first. Buy the domain, set up the host, get a hello world page live before you spend time on design. Knowing your deploy pipeline works removes a lot of anxiety from the creative work.</p>
+
+        <p>Finally, ship before it is perfect. The version that exists on the internet is worth a thousand of the perfect version that lives only on your laptop. You can keep iterating once it is live.</p>
+
+        <h2>Closing</h2>
+
+        <p>The barrier to building real things on the internet has collapsed in the last two years. You do not need a bootcamp, a developer friend, or a six month commitment to learn enough to ship something useful and good looking. You need a couple of free tools, a willingness to describe what you want, and the patience to iterate.</p>
+
+        <p>If you have been thinking about putting up your own site, this is the easiest moment in history to do it. Go build something.</p>
+
+        <div class="article-foot">
+          <span>End of No. 01</span>
+          <a href="/musings/">More Musings &rarr;</a>
+        </div>
+
+        <p class="article-disclaimer">Views expressed are explicitly that of my own.</p>
+
+      </div>
+    </article>
+
+  </main>
+
+  <footer class="site-footer">
+    <span class="brand-foot"><span class="j">j.</span> Jacob Singer</span>
+    <span>&copy; 2026 &middot; jacobbsinger.com &middot; AI &amp; Cloud Leader</span>
+  </footer>
+
+  <script src="/script.js"></script>
+</body>
+</html>
