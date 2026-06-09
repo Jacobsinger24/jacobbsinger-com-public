@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Decoupling the Device: Cloud PC as the Forcing Function — Jacob Singer</title>
+  <meta name="description" content="How a DRAM supply shock is quietly making the case for Cloud PC stronger than any vendor pitch could." />
+  <meta name="author" content="Jacob Singer" />
+  <link rel="canonical" href="https://jacobbsinger.com/musings/decoupling-the-device/" />
+  <meta property="og:title" content="Decoupling the Device: Cloud PC as the Forcing Function" />
+  <meta property="og:description" content="How a DRAM supply shock is quietly making the case for Cloud PC stronger than any vendor pitch could." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://jacobbsinger.com/musings/decoupling-the-device/" />
+  <meta property="og:site_name" content="jacobbsinger.com" />
+  <meta property="og:image" content="https://jacobbsinger.com/og-card.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Jacob Singer — Enterprise Learnings + Personal AI unlocks." />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Decoupling the Device: Cloud PC as the Forcing Function" />
+  <meta name="twitter:description" content="How a DRAM supply shock is quietly making the case for Cloud PC stronger than any vendor pitch could." />
+  <meta name="twitter:image" content="https://jacobbsinger.com/og-card.png" />
+  <link rel="icon" href="/favicon.ico?v=2" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=2">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=2">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#6e2310">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="inner">
+      <span>Enterprise AI learnings from the field</span>
+      <span>jacobbsinger.com</span>
+      <span id="topbar-date">Est. May 2026</span>
+    </div>
+  </div>
+
+  <nav class="topnav">
+    <div class="inner">
+      <a class="masthead" href="/" aria-label="Home">
+        <span class="j">j.</span>
+        <span class="name">Jacob Singer</span>
+      </a>
+      <ul class="blades" aria-label="Primary">
+        <li><a href="/musings/">Musings</a></li>
+        <li><a href="/#about">About</a></li>
+        <li><a href="/#contact">Contact</a></li>
+      </ul>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle color theme">
+        <span class="icon moon" aria-hidden="true">&#9790;</span>
+        <span class="icon sun" aria-hidden="true">&#9728;</span>
+        <span class="label">Theme</span>
+      </button>
+    </div>
+  </nav>
+
+  <main class="frame">
+
+    <article class="article-page">
+      <a class="back-link" href="/musings/"><span aria-hidden="true">&larr;</span> Back to Musings</a>
+
+      <div class="article-eyebrow"><span class="num">No. 03</span> &middot; Musings of a Vibe Coder &middot; May 2026</div>
+      <h1 class="article-title">Decoupling the Device: <em>Cloud PC as the Forcing Function.</em></h1>
+      <p class="article-subhead">How a DRAM supply shock is quietly making the case for Cloud PC stronger than any vendor pitch could.</p>
+      <div class="article-meta">
+        <span>By Jacob Singer</span>
+        <span class="dot">&middot;</span>
+        <span>~15 min read</span>
+        <span class="dot">&middot;</span>
+        <span>Published 20 May 2026</span>
+      </div>
+      <div class="article-tags">
+        <a class="article-tag" href="/musings/?tags=enterprise-learnings">Enterprise Learnings</a>
+        <a class="article-tag" href="/musings/?tags=cloud-pc">Cloud PC</a>
+        <a class="article-tag" href="/musings/?tags=industry-thoughts">Industry Thoughts</a>
+      </div>
+
+      <div class="article-body">
+
+        <p>Quick preface: I work in Cloud GTM. I spend most of my time in front of large customers who are trying to figure out what their endpoint, identity, and AI strategy is going to look like over the next several years. What follows is a pattern I keep seeing in those conversations, generalized so I am not pointing at any one organization. No customers, no logos, no anecdotes from any specific room. Just the shape of the thing.</p>
+
+        <p>There is a macro story moving through the industry right now that is going to quietly reset how every large organization buys, deploys, and refreshes computers for the next five years. Most IT roadmaps have not priced it in yet. The ones that do early are going to spend a lot less money and end up with a more flexible posture on the other side of it.</p>
+
+        <p>That story is about DRAM.</p>
+
+        <h2>The setup nobody is talking about loudly enough</h2>
+
+        <p>Over 70 percent of global DRAM capacity is expected to be committed to data centers over the next several years. That is not a normal share. That is a structural reallocation driven by the same AI buildout everyone is watching from the model and inference side. Hyperscalers, sovereign clouds, large enterprises standing up private AI capacity. All of them want the same memory chips, all at the same time.</p>
+
+        <p>The supply side can absorb that demand. Eventually. New fabs are getting built. The problem is that fabs come online in years, not months. There is no shortcut. There is no procurement trick that turns a multi year capital project into a quarterly deliverable.</p>
+
+        <p>So in the meantime, DRAM is going to get expensive. The conservative projection is at least 25 percent across the board. Depending on the SKU, the curve gets much steeper. Certain memory categories are tracking toward 100 percent, 200 percent, even 300 percent. Those are not theoretical numbers. Those are the numbers OEMs are starting to use when they reset their own forward pricing models.</p>
+
+        <p>Memory is not a small line item inside a laptop. When DRAM triples on a SKU, the laptop does not triple, but it does jump in a way that breaks the spreadsheet your hardware planner built last year. There is no clever workaround for a supply constrained input. You either pay the new price, or you change what you are buying.</p>
+
+        <p>That is the part the industry is going to spend the next 18 months absorbing.</p>
+
+        <h2>The question that quietly rewrites IT strategy</h2>
+
+        <p>So here is the question every hardware planner is about to be asked, and the question every CFO is about to ask first if their hardware planner does not get there in time:</p>
+
+        <p><strong>If devices are about to cost meaningfully more for a sustained period, do we still want to keep buying them on a five year cadence?</strong></p>
+
+        <p>Most organizations are going to answer that question with their wallet before they answer it with a strategy. The wallet answer is <em>delay the refresh and hope for the best.</em> That answer is not crazy. It is also not a strategy. It is what you do when nobody has handed you a better option.</p>
+
+        <p>The better option, generalized, is this: <strong>decouple the user experience from the physical device.</strong></p>
+
+        <p>Once you accept that as a goal, the path forward gets pretty clear. There are two doors through that wall. They look very different from the outside. They lead to the same room.</p>
+
+        <h2>Door one: thin clients</h2>
+
+        <p>The first door is the obvious one once you accept that the device no longer has to do the heavy lifting.</p>
+
+        <p>Instead of buying a fully equipped laptop for every information worker, the kind of machine whose bill of materials is dominated by exactly the components that are about to get more expensive, organizations can shift toward purpose built endpoints. A device whose only real job is to be a high quality window into a Cloud PC. There are several of these on the market now and more coming.</p>
+
+        <p>The economics flip in a useful way. The endpoint gets cheaper because it does not need to carry a full performance profile. It needs to render a remote session well, handle peripherals, and have a good keyboard. That is most of the job. The performance profile lives in the Cloud PC, where it can be sized to the role rather than the worker. Heavy users get more, light users get less, and the central IT team gets a single dial they can actually turn.</p>
+
+        <p>The part that matters for a CFO is the next sentence. That compute, the Cloud PC capacity behind every one of those endpoints, can be locked into an enterprise agreement over multiple years. You are trading a commodity hardware market you do not control for a contracted compute price you do.</p>
+
+        <p>That is not a small shift. It is the same move enterprises made years ago when they stopped buying their own servers and started buying cloud capacity. It worked then because it converted a volatile capital line into a predictable operating line. It will work now for the same reason, applied to the endpoint layer, at exactly the moment the endpoint layer is about to get hit by a supply shock.</p>
+
+        <p>The tradeoffs are real, and worth naming honestly because they are the parts that get glossed over in vendor pitches.</p>
+
+        <p>Not every user fits a thin client profile. Heavy creative workloads, video and audio production, design and engineering tools that lean hard on local GPU, all of those still want real silicon close to the user. There is a slice of the workforce that will keep getting traditional devices for the foreseeable future, and that is fine. The thin client thesis is not <em>every person, every role.</em> It is <em>the long, fat middle of the user base, the people whose day is mostly browser, productivity apps, and line of business tools.</em></p>
+
+        <p>Network dependency becomes load bearing in a way it was not before. If the Cloud PC is the user&rsquo;s actual machine, then the network between them and it has to be treated like critical infrastructure, not nice to have. Most large organizations are already there for other reasons. The ones that are not need to get there before this strategy scales.</p>
+
+        <p>And there is an organizational change cost that nobody likes to put a number on. The help desk muscle has to evolve. The imaging pipeline has to evolve. The executive laptop expectations have to evolve, and that one in particular is harder than the rest of them combined. The first time you tell a senior leader they are getting a small box instead of the premium laptop they have been getting for fifteen years, you will discover a category of conversation no project plan accounted for.</p>
+
+        <p>None of those tradeoffs are deal breakers. They are the work. They are also the kind of work that gets a lot easier to justify when the alternative is signing a hardware refresh contract priced against tripled memory.</p>
+
+        <p><strong>Lesson: thin client strategies are not about the device getting smaller. They are about moving cost out of a volatile commodity market and into a contract you can negotiate.</strong></p>
+
+        <h2>Door two: lifecycle extension</h2>
+
+        <p>The second door is the one most organizations will actually walk through first, because it requires the least disruption to anything. It is also, quietly, the more interesting one strategically.</p>
+
+        <p>A typical refresh cycle in a large enterprise today is roughly five years. The math behind that number assumed two things. It assumed a more or less stable input cost on the hardware side. It also assumed a more or less predictable performance gap between a five year old device and a brand new one. Both of those assumptions are softening at the same time.</p>
+
+        <p>Layer a Cloud PC on top of an aging device, and the performance gap closes. The local hardware is no longer the thing producing the user&rsquo;s experience. It is the thing rendering it. A four year old laptop that would have been on the retirement list next year can plausibly run for two or three more years, because the work has been moved off it. The local machine just needs to display the session, handle input, and stay alive long enough to do that reliably. Those are much lower bars than running modern productivity workloads natively.</p>
+
+        <p>That extends the practical refresh cycle from five years to seven, sometimes eight, depending on the user and the workload mix. In a normal market, that is a nice cost optimization. In a market where the alternative is paying meaningfully more for a new device built around inflated memory, two or three extra years per device is not a marginal saving. It is a strategic one. It is the kind of move that meaningfully changes the shape of the next two budget cycles.</p>
+
+        <p>The interesting part is what happens to the cycle after the extension. By the time those extended life devices finally do need replacement, the market should be on the other side of the worst of the DRAM constraint (so we hope). Maybe not fully normalized, but past the peak (again, probably hope). The organization gets to make a calmer, less coerced purchasing decision into a more rational market. That is not just cost avoidance. It is <strong>time arbitrage against a known supply shock.</strong> You are using cloud compute to buy yourself a delay, and you are spending the delay waiting for the market to come back to you.</p>
+
+        <p>Worth being honest about the limits here too. Lifecycle extension is not a forever play. Eventually a device&rsquo;s battery dies, its display fails, its ports stop working, or the manufacturer drops support. Cloud PC does not make a piece of hardware immortal. It makes it last longer than its raw performance profile would otherwise allow. A few years of additional life realistically, not ten.</p>
+
+        <p>It also is not free. There is a per user cost to running a Cloud PC, and that cost is real. The math works when you compare it against the cost of replacing the underlying device early in a constrained market. The math works less well if you ignore the comparison and just look at the line item. There&rsquo;s a whole TCO argument here I usually make. I&rsquo;ll save that for another article however.</p>
+
+        <p><strong>Lesson: lifecycle extension is a comparative argument, not an absolute one. If you do not put the avoided hardware spend next to the Cloud PC spend in the same view, the conversation goes nowhere.</strong></p>
+
+        <h2>What both doors have in common</h2>
+
+        <p>Both doors lead to the same room.</p>
+
+        <p>Thin clients move new spend off devices and into Cloud PC contracts. Lifecycle extension keeps existing devices alive by pushing the performance profile into the cloud. Different starting points, same architectural conclusion: <strong>the experience the user has should not be tightly coupled to the silicon under their hands.</strong></p>
+
+        <p>Once you accept that as a principle, several second order benefits start to compound, almost regardless of which door you walk through.</p>
+
+        <p>Standardization gets easier when the runtime environment is centrally defined rather than per device. You stop chasing a fleet of slightly different configurations and start managing a small number of well defined Cloud PC images. The drift problem that plagues every large endpoint estate gets smaller, not by force, but by architecture.</p>
+
+        <p>Security posture improves because sensitive work happens inside a managed boundary rather than on a fleet of endpoints scattered across countries and conditions. The endpoint becomes more of a viewer and less of a vault. That changes the threat surface in a useful way. You still care about the endpoint, but you care about it differently.</p>
+
+        <p>Onboarding and offboarding stop being device shipping problems and start being identity events. Provisioning a new employee becomes a question of granting access, not freighting hardware. Offboarding becomes a question of revoking access, not chasing down a laptop. For organizations with contractor heavy or globally distributed workforces, that change alone pays for a lot of the strategy.</p>
+
+        <p>None of these are reasons to make the shift on their own. They are not the headline argument. The headline argument is cost in a constrained market. But the structural benefits accrue alongside the cost savings, and they are the reasons the move is worth making even after the market normalizes.</p>
+
+        <p><strong>The DRAM crunch is the forcing function that makes the move financially obvious. The structural benefits are why the move would be worth making anyway.</strong></p>
+
+        <p>That is the part that gets left out of most of these conversations. The cost story brings people to the table. The architecture story is why anyone stays.</p>
+
+        <h2>The part that is easy to miss</h2>
+
+        <p>Here is where it gets interesting, and where the conversation expands beyond hardware planning.</p>
+
+        <p>The same Cloud PC fabric that solves a DRAM problem for human workers is going to be where a new class of non human workers runs.</p>
+
+        <p>I am not going to turn this article into an agent piece. That is a different article and I will write it separately. But the architectural connection is too important to skip past, because it changes the calculus on the investment you are making for hardware reasons.</p>
+
+        <p>As computer use AI matures, more enterprise work is going to get done by software that operates an actual Windows session. Clicking through line of business apps, working inside browsers, filling out forms, moving data between systems that never got an API and never will. That is not a hypothetical. The capability is here, the products are shipping, and the pace is only accelerating. The part that is still being worked out is where that work actually runs.</p>
+
+        <p>It cannot run on a human&rsquo;s laptop. Or rather, it can, but it should not, because the moment you let an agent operate the same machine your CFO uses to read board materials, you have created a governance problem that no security team is going to sign off on at scale.</p>
+
+        <p>It cannot run in an ad hoc developer environment either. That works for one team. It does not work for ten. The moment you have multiple teams standing up their own agent runtimes, you have a sprawl problem that ends in either a costly cleanup project or a security incident, usually both.</p>
+
+        <p>What it needs is the same kind of governed, pooled, policy controlled Windows environment that solves the human side of the DRAM equation. A place where a workload can be assigned a Cloud PC from a pool, do its job, hand the machine back, and have all of that be auditable, central, and bounded by enterprise policy.</p>
+
+        <p>That is not a coincidence. It is the same architectural requirement showing up twice. Once from the cost side. Once from the autonomy side. Both pointing at the same answer.</p>
+
+        <p>Organizations that build out Cloud PC capability now, for legitimate hardware cycle reasons, will discover that they have also built the foundation for a digital workforce later. One investment. Two payoffs. The reverse path, building agent infrastructure first and then bolting on an endpoint strategy on top of it, is harder, more expensive, and much harder to justify line by line in a budget review.</p>
+
+        <p><strong>Lesson: the hardware story and the agent story are converging on the same infrastructure. The organizations that recognize that early get to make one bet instead of two.</strong></p>
+
+        <h2>What <em>enterprise grade</em> actually looks like here (through the lens of Windows Security)</h2>
+
+        <p>The phrase <em>enterprise grade</em> gets thrown around loosely. In this context it means something specific, and worth naming for anyone evaluating the move.</p>
+
+        <p>It means <strong>governance inheritance, not invention.</strong> The control plane that already manages endpoints in a mature enterprise (provisioning policies, role based access, conditional access, identity governance, audit) extends to Cloud PCs without having to invent a new model. Whoever already owns endpoint policy in the organization owns this. That continuity is a meaningful adoption shortcut, and it is one of the underrated reasons the model scales. You are not asking a security team to learn a new control plane. You are asking them to extend the one they already trust.</p>
+
+        <p>It means <strong>a managed boundary, not just a managed device.</strong> Sensitive work, the kind that happens in regulated industries like finance, healthcare, and the public sector, happens inside a segmented environment rather than on the user&rsquo;s actual laptop. The boundary is auditable. The endpoint becomes incidental. That changes how a CISO has to think about insider risk, lost devices, and data exfiltration. It does not make those problems disappear. It changes which surface you have to defend, and the surface is smaller and more uniform.</p>
+
+        <p>It means <strong>elastic compute aligned to actual use.</strong> Always available capacity for the workloads that genuinely need it, pooled and on demand capacity for the workloads that do not. The cost shape matches the work shape. That is the property that lets a CFO sign off on a model where the bill goes up and down with usage rather than sitting at a permanent ceiling. It also happens to be the property that makes the same fabric work for digital labor, where bursts of concurrent work need to be absorbed without provisioning a permanent fleet to handle the peak.</p>
+
+        <p>It means <strong>a standardized environment, not a fleet of snowflakes.</strong> A change to the Cloud PC image propagates everywhere. A change to a laptop image propagates whenever the user next plugs in, or returns from leave, or comes back from a long trip without connecting to the corporate network. For an organization trying to run a tight security posture across thousands of users, that gap is not subtle. It is the difference between a vulnerability getting patched everywhere on a Tuesday afternoon and the same vulnerability lingering on a slice of the fleet for weeks.</p>
+
+        <p>None of this is conceptually new. The cloud native crowd has been making versions of these arguments for a decade. What is new is the cost pressure that turns the conversation from <em>interesting future state</em> into <em>the cheapest reasonable answer to a question the CFO is about to ask out loud.</em> When the macro forces a strategy that the architects already wanted, things move quickly.</p>
+
+        <h2>The honest closing read</h2>
+
+        <p>Predictions are cheap, so here is mine, scoped narrowly to what I actually believe.</p>
+
+        <p>The DRAM constraint is going to be a real factor in enterprise IT planning for at least the next 24 months, and more realistically for the next three to five years before pricing normalizes in a way you can plan around without a hedge. Organizations that treat that window as a procurement problem will spend more, lock themselves into worse contracts, and end up with a less flexible posture on the other side of it. Organizations that treat it as a forcing function to decouple the user experience from the device will spend less, get more life out of what they already own, and have built the foundation for the next architectural wave on top of it.</p>
+
+        <p>The thing that makes this a clean bet, even for organizations that are skeptical about the agentic future, is that you do not have to believe the agentic thesis to make the move. You only have to believe two things. You have to believe that DRAM is going to cost more for a sustained period. And you have to believe that decoupling the user experience from the device is a good architectural principle in general.</p>
+
+        <p>Both of those are easy to defend in any boardroom. The agentic upside, the digital labor foundation, the fact that the same fabric absorbs the next workload class, all of that comes for free when you build the capability for the hardware reason.</p>
+
+        <p>That is the kind of bet worth making before the rest of the market figures out it had to. The organizations that move now get to negotiate from a position of choice. The ones that wait will end up moving anyway, but they will move under pressure, on worse terms, into a market where everyone else is doing the same thing.</p>
+
+        <p>If you are sitting on a hardware refresh decision this year, that is the question I would put on the table. Not <em>which laptop do we buy.</em> Not even <em>do we buy laptops or thin clients.</em> The right question is: <strong>what does our endpoint strategy look like if memory stays expensive for the next five years, and what does it look like when a meaningful share of our actual work is being done by software that needs to run somewhere too?</strong></p>
+
+        <p>If the answer to both of those questions is the same fabric, you have your strategy.</p>
+
+        <div class="article-foot">
+          <span>End of No. 03</span>
+          <a href="/musings/">More Musings &rarr;</a>
+        </div>
+
+        <p class="article-disclaimer">Views expressed are explicitly that of my own.</p>
+
+      </div>
+    </article>
+
+  </main>
+
+  <footer class="site-footer">
+    <span class="brand-foot"><span class="j">j.</span> Jacob Singer</span>
+    <span>&copy; 2026 &middot; jacobbsinger.com &middot; AI &amp; Cloud Leader</span>
+  </footer>
+
+  <script src="/script.js"></script>
+  <!-- Cloudflare Web Analytics -->
+  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "0b7124bcaf9a4046839a7f8ce56a95eb"}'></script>
+  <!-- End Cloudflare Web Analytics -->
+</body>
+</html>
