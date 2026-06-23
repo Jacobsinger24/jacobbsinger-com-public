@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Somewhere to Work: Why Autonomy Needs a Desktop — Jacob Singer</title>
+  <meta name="description" content="Agents have gotten smart enough to do the work. The next move is giving them somewhere to actually do it." />
+  <meta name="author" content="Jacob Singer" />
+  <link rel="canonical" href="https://jacobbsinger.com/musings/somewhere-to-work/" />
+  <meta property="og:title" content="Somewhere to Work: Why Autonomy Needs a Desktop" />
+  <meta property="og:description" content="Agents have gotten smart enough to do the work. The next move is giving them somewhere to actually do it." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://jacobbsinger.com/musings/somewhere-to-work/" />
+  <meta property="og:site_name" content="jacobbsinger.com" />
+  <meta property="og:image" content="https://jacobbsinger.com/og-card.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Jacob Singer — Enterprise Learnings + Personal AI unlocks." />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Somewhere to Work: Why Autonomy Needs a Desktop" />
+  <meta name="twitter:description" content="Agents have gotten smart enough to do the work. The next move is giving them somewhere to actually do it." />
+  <meta name="twitter:image" content="https://jacobbsinger.com/og-card.png" />
+  <link rel="icon" href="/favicon.ico?v=2" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=2">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=2">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#6e2310">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="inner">
+      <span>Enterprise AI learnings from the field</span>
+      <span>jacobbsinger.com</span>
+      <span id="topbar-date">Est. May 2026</span>
+    </div>
+  </div>
+
+  <nav class="topnav">
+    <div class="inner">
+      <a class="masthead" href="/" aria-label="Home">
+        <span class="j">j.</span>
+        <span class="name">Jacob Singer</span>
+      </a>
+      <ul class="blades" aria-label="Primary">
+        <li><a href="/musings/">Musings</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/#contact">Contact</a></li>
+      </ul>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle color theme">
+        <span class="icon moon" aria-hidden="true">&#9790;</span>
+        <span class="icon sun" aria-hidden="true">&#9728;</span>
+        <span class="label">Theme</span>
+      </button>
+    </div>
+  </nav>
+
+  <main class="frame">
+
+    <article class="article-page">
+      <a class="back-link" href="/musings/"><span aria-hidden="true">&larr;</span> Back to Musings</a>
+
+      <div class="article-eyebrow"><span class="num">No. 04</span> &middot; Musings of a Vibe Coder &middot; May 2026</div>
+      <h1 class="article-title">Somewhere to Work: <em>Why Autonomy Needs a Desktop.</em></h1>
+      <p class="article-subhead">Agents have gotten smart enough to do the work. The next move is giving them somewhere to actually do it.</p>
+      <div class="article-meta">
+        <span>By Jacob Singer</span>
+        <span class="dot">&middot;</span>
+        <span>~13 min read</span>
+        <span class="dot">&middot;</span>
+        <span>Published 27 May 2026</span>
+      </div>
+      <div class="article-tags">
+        <a class="article-tag" href="/musings/?tags=enterprise-learnings">Enterprise Learnings</a>
+        <a class="article-tag" href="/musings/?tags=cloud-pc">Cloud PC</a>
+        <a class="article-tag" href="/musings/?tags=industry-thoughts">Industry Thoughts</a>
+        <a class="article-tag" href="/musings/?tags=agents">Agents</a>
+      </div>
+
+      <div class="article-body">
+
+        <p>There is a quiet pattern in how enterprise AI conversations evolve.</p>
+
+        <p>Year one is about whether models can answer questions. Year two is about whether they can string a few questions together into something that looks like a task. Year three, which most enterprises are walking into right now, is about whether they can actually operate the systems the business already runs on.</p>
+
+        <p>That last shift is bigger than it sounds.</p>
+
+        <p>An agent that retrieves an answer is a search engine with manners. An agent that completes a multi-step task is a useful piece of automation. An agent that operates the company&rsquo;s billing system, opens a ticketing tool, navigates to the right view, edits a record, and saves it is no longer a productivity feature. That is a worker.</p>
+
+        <p>And workers need somewhere to work.</p>
+
+        <h2>The maturity curve nobody priced in</h2>
+
+        <p>The clearest way to think about where we are is to put it on a curve.</p>
+
+        <p>The first rung is retrieval. The agent reads documents, surfaces summaries, answers questions. Everything happens in a chat surface. The compute is wherever the model lives, which for most enterprises is a managed service in someone else&rsquo;s cloud. There is no real infrastructure question here, because the agent doesn&rsquo;t <em>do</em> anything beyond produce text.</p>
+
+        <p>The second rung is task completion. The agent does something. It calls an API, files a record, sends an email through Graph, hits a SaaS endpoint. There is still no infrastructure question that the enterprise really has to answer, because all of the work happens through interfaces designed for machines. Identity flows through normal channels. Logs land in normal places. It is governed by the same fabric that governs the rest of the enterprise stack.</p>
+
+        <p>The third rung is autonomy. The agent operates a system. Not through an API but through the system itself. It opens the application a human would open, navigates the screens a human would navigate, fills the fields a human would fill. This is where it stops being a software problem and starts being an operations problem.</p>
+
+        <p><strong>Because now the question is: where does this thing run?</strong></p>
+
+        <p>You can&rsquo;t run it on a corporate laptop. The laptop is a personal device. It belongs to a person. The minute you ask a thousand laptops to host a thousand agents on the side, you have created a thousand uncontrolled execution environments. That is a security person&rsquo;s nightmare and a finance person&rsquo;s confusion, and neither of those people will tolerate it past the proof of concept.</p>
+
+        <p>You can&rsquo;t run it on a personal cloud machine either. The agent is not a personal productivity tool. It is a standardized capability that operates on behalf of a function. A finance reconciliation agent, an HR onboarding agent, an expense processing agent. It belongs to the function, not to a person. Tying it to one user&rsquo;s identity and one user&rsquo;s box is the same governance shape as RPA on dedicated workstations, which the industry spent a decade learning to regret.</p>
+
+        <p>And you can&rsquo;t run it on a shared server. Servers don&rsquo;t have user interfaces. They don&rsquo;t have a desktop, a browser session, the visual surface that the agent needs to operate against. They run code. They are not where humans do work, and they are not where agents that mimic humans can do it either.</p>
+
+        <p>So what is left?</p>
+
+        <p>The honest answer is: not very much, until recently.</p>
+
+        <h2>The UI constraint nobody talks about</h2>
+
+        <p>The reason this matters more than it looks is that a meaningful chunk of enterprise work still runs through interfaces, not APIs.</p>
+
+        <p>This is not a temporary state of affairs. Decades of business systems were built before anyone designed them to be machine-readable from the outside. ERPs, claims systems, electronic health records, legacy procurement tools, the line-of-business app that one team owns and quietly depends on. These systems were designed for a person to sit in front of and operate. The API surface, where it exists at all, is partial. It covers the easy reads and a few of the easy writes. It does not cover the long tail of <em>open this form, tick the right box, attach the document, click submit, screenshot the confirmation.</em></p>
+
+        <p>Traditional RPA tried to solve this for years and mostly broke against the same wall. Any automation that depends on a fixed screen layout is one redesign away from breaking. Move a button six pixels and your script fails. Add a new field and the path doesn&rsquo;t match. The industry built tooling around this fragility, and the tooling kept up with vendor updates, but at the cost of constant maintenance and a brittle posture toward change.</p>
+
+        <p>Agents change the brittleness story because they don&rsquo;t follow a fixed path. They see the screen, reason about what&rsquo;s on it, and figure out the right move. Buttons can move. Fields can change. The agent reads the current state and adapts. That doesn&rsquo;t make it bulletproof, but it does change the maintenance shape from script per system to model per workflow.</p>
+
+        <p>For that to work, the agent needs an actual screen to look at. Not an abstract canvas. A real Windows session with real applications loaded, real fonts rendered, real DOM trees that match what a human would see. Anything less and you are back to script fragility wrapped in a thin layer of language model.</p>
+
+        <p><strong>That is the part of the story I keep finding people skipping over. The conversation jumps from <em>agents can do work</em> to <em>agents will replace functions</em> without stopping at the question of what surface they actually work on.</strong></p>
+
+        <h2>From personal assistant to digital labor</h2>
+
+        <p>Most of what people experience as agents today is a personal assistant pattern.</p>
+
+        <p>You have a chat surface. You ask it things. It returns. Sometimes it does small actions in the background. The agent is yours. It belongs to your identity, runs in the context of your tooling, has access to whatever you have access to. This is a productivity story and it is a useful one.</p>
+
+        <p>The piece I keep flagging is that this pattern does not scale to digital labor.</p>
+
+        <p>The minute you try to take an agent and apply it consistently across a function, every invoice that comes in, every new hire that needs onboarding, every expense report that needs processing, you have left the personal assistant world. You have entered the workforce design world. The agent is no longer a tool that a person uses. It is a worker that a process depends on.</p>
+
+        <p>That shift changes everything about how the agent has to be set up.</p>
+
+        <p>It needs a fixed identity that is not tied to a specific person, because the human who created it might leave the company and the work should not stop. It needs governed credentials, because asking the agent to inherit one named employee&rsquo;s credentials is a control mess waiting to happen. It needs a managed environment, because the operations team needs to know what is installed, what is patched, and what the agent can and cannot reach. It needs auditability, because finance and security will not accept <em>the agent did it</em> as an explanation for a record change.</p>
+
+        <p>In short, it needs to look less like an app and more like a desk. A desk that someone has set up, governed, named, and assigned work to. A workplace.</p>
+
+        <p><strong>The industry has been so focused on making agents capable that we are only now catching up on the question of where they go to exist.</strong></p>
+
+        <h2>What governed execution actually looks like</h2>
+
+        <p>This is where my day job intersects with my writing more than usual.</p>
+
+        <p>I have been spending time with Computer Use Agents running inside pooled Cloud PCs, which is the concrete shape Microsoft has put around this problem in the Windows 365 for Agents pattern. The product itself matters less than what it represents. An enterprise tries to solve the <em>somewhere to work</em> problem and lands on a managed Windows session as the unit of work.</p>
+
+        <p>The pattern, generalized, looks like this.</p>
+
+        <p>You define a pool of cloud machines. Not personal Cloud PCs. Not desktops assigned to people. A pool, sitting in policy, available to be checked out. When an agent has work to do, it pulls a machine from the pool, does the work, and returns the machine to the pool when it is done. The machine is not a thing the agent owns. It is a thing the agent borrows for the duration of the task.</p>
+
+        <p>This sounds like a small operational detail. It is not. It quietly solves a list of enterprise problems that have been blocking agentic adoption for two years.</p>
+
+        <p>Identity is no longer hostage to a specific human user. The agent gets credentials that belong to the function it serves, not to the person who built it. When the builder leaves, the work continues.</p>
+
+        <p>Concurrency stops being a thought experiment. Need to process a high volume of invoices in a tight window? Configure the pool size and let the agent run that many sessions in parallel. The work shape is now elastic. You scale by changing a policy, not by deploying a hundred more bots.</p>
+
+        <p>Cost stops being a fixed footprint. You are not paying for a permanent fleet of desktops that sit idle. You are paying for hours of work performed, with a baseline of always-available capacity for whatever has to be ready on demand. Serverless logic, applied to Windows.</p>
+
+        <p>Governance inherits from infrastructure the enterprise already runs. The pool is provisioned through endpoint management. RBAC governs who can create, share, or modify agents. The same fabric that controls a corporate laptop fleet controls an agentic fleet. Adoption does not require inventing a new control plane.</p>
+
+        <p><strong>That last point is what makes this enterprise grade rather than enterprise curious. Most genuinely new technology fails to land in regulated industries because it asks the organization to invent something new on top of what is already there. The technology that lands is the technology that inherits.</strong></p>
+
+        <p>The boring story is the adoption story.</p>
+
+        <h2>The human is still in the room</h2>
+
+        <p>One of the patterns I keep underlining for executives is that this is not autonomous AI in any worrying sense.</p>
+
+        <p>The agent operates inside a session that a human can take over.</p>
+
+        <p>When a judgment call comes up, the work does not get blocked. The session gets handed off. A human walks into the same Cloud PC, sees what the agent was doing, makes the call, and either lets the agent continue or completes the work themselves. The audit trail is intact because the work happened in one continuous environment.</p>
+
+        <p>That is a meaningful design choice. The alternative would be for the agent to fail closed when it hits ambiguity, generate an exception, escalate, and wait. That pattern works for some workflows and breaks for others. Particularly the ones where the cost of a stall is higher than the cost of an occasional human override.</p>
+
+        <p>Putting the human-in-the-loop control inside the same execution surface as the agent is the right answer for enterprise work. It keeps continuity. It keeps oversight. It keeps risk owners comfortable, which is the gating condition for any of this scaling past a tens-of-agents proof of concept.</p>
+
+        <p>I have watched executives soften visibly the moment they understand this part of the architecture. The objection in their head is <em>what if it does something wrong and we cannot stop it.</em> The answer is <em>the human is one keystroke away inside the same session.</em> That does not eliminate the risk. It eliminates the panic.</p>
+
+        <h2>The honest limits</h2>
+
+        <p>Worth being clear about what this is not.</p>
+
+        <p>It is not generally available yet in the form most useful to large enterprises. Public preview tends to mean a Microsoft-hosted network, Entra-joined identity, and a constrained set of options for connecting the agent&rsquo;s environment to on-premises resources. While not the fullest baked it will be, it&rsquo;s far enough along for organizations to be testing across functions like HR and Finance, where lesser automations are already highly engrained. Real enterprise deployments at scale will want hybrid join, customer-network integration, and tighter alignment with their existing endpoint security stack. Some of that exists today, some of it is on the way, some of it is still being figured out. The architecture options will evolve, again, start now.</p>
+
+        <p>It is not a substitute for a human workforce. The framing of <em>digital employees</em> is useful because it forces the right organizational questions, but the work the agents do is still a specific shape of work. The repetitive, UI-heavy, well-defined kind. The kind that has been frustrating talented humans for a decade because it should not have to be a human doing it. The kind we used to throw RPA at and quietly tolerate the brittleness of.</p>
+
+        <p>It is not free, even when it looks like it. There is an included tier of compute that comes with the product today, and it is meaningful for early experimentation. Past that, you are paying for Cloud PC hours just like you would for any cloud resource. The economics are good when you compare them against the cost of running brittle automation on dedicated workstations forever. FinOps applies here the same way it applies to anything elastic. The teams that win this are the ones that build cost telemetry into the agent operating model from day one.</p>
+
+        <p>It is not plug and play. The organizations that get value from this in the first twelve months will be the ones that have done the unglamorous work first. Pick a small number of high-volume, well-understood workflows. Define what the agent is supposed to do in language a process owner would accept. Decide who owns the agent, who owns the pool, who owns the budget, who owns the incidents. Build the governance scaffolding before you scale the work.</p>
+
+        <p><strong>The technology is real. The operating model is the bottleneck.</strong></p>
+
+        <h2>What this looks like a few quarters out</h2>
+
+        <p>If I had to make a small bet on what the enterprise endpoint conversation looks like a year from now, it would be this.</p>
+
+        <p>The Cloud PC will quietly become a dual-use surface. The same managed Windows environment that gives a human a flexible workspace gives an agent a managed workplace. The infrastructure decision becomes less about <em>human vs agent</em> and more about <em>what shape of work is running here today.</em> That is the convergence I gestured at in the last piece, and it is closer than most teams think.</p>
+
+        <p>Endpoint strategy stops being a fleet management conversation and starts being a workforce design conversation. How many seats. How many agents. How many of each per function. How they hand off to each other. Where the humans are in the loop and where they are not. The answers to those questions live in two places now, not one. IT inherits half of it because the runtime is theirs. Operations and finance inherit the other half because the work it does belongs to them.</p>
+
+        <p>Procurement gets harder, because nobody is shipping <em>agent labor</em> as a clean SKU yet. The unit economics will get clearer, but you will have to build them yourself for the first few quarters. There is real work in defining cost per workflow, cost per run, cost per outcome, in a way your finance org can hold against the headcount it might otherwise have hired.</p>
+
+        <p>The vendors who win this are the ones who treat governance as a foundation and not an afterthought. The buyers who win this are the ones who treat <em>somewhere to work</em> as a first-class question.</p>
+
+        <p>The agent does the work. The desktop is where the work happens. The policy is what makes it safe to do at scale.</p>
+
+        <p>That is the part of the story I think we under-tell.</p>
+
+        <h2>The honest closing read</h2>
+
+        <p>We spent two years getting good at making agents smart.</p>
+
+        <p>We are about to spend a few more years figuring out where to put them.</p>
+
+        <p>For most of the workflows that matter in regulated industries, that <em>where</em> is going to look an awful lot like a managed Windows session sitting in a pool, available on demand, governed by the same controls that already govern the rest of the endpoint estate. Not because anyone planned it that way. Because that is what the constraints kept pointing at.</p>
+
+        <p>I spent last week at a Frontier summit for IT leaders in Chicago. This topic became one of the key takeaways for many of the attendees. As we demoed and reviewed the agentic use cases for cloud PCs it became even more apparent how much redesigning is still to be done. Many of the side conversations in between sessions candidly revolved around &ldquo;where do I begin?&rdquo;. The organizations that take the time to plan, iterate, build and learn now, will be inherently further than those consumed with driving RAG solution adoption.</p>
+
+        <p>The forcing function this time is not a supply shock or a vendor strategy. It is the simple operational reality that <em>autonomy needs a surface,</em> and the only surface that can host the work without rewriting the application layer of the enterprise is the one the enterprise already runs on.</p>
+
+        <p>The agents are graduating from talking to doing.</p>
+
+        <p>The desks are getting built right behind them.</p>
+
+        <div class="article-foot">
+          <span>End of No. 04</span>
+          <a href="/musings/">More Musings &rarr;</a>
+        </div>
+
+        <p class="article-disclaimer">Views expressed are explicitly that of my own.</p>
+
+      </div>
+    </article>
+
+  </main>
+
+  <footer class="site-footer">
+    <span class="brand-foot"><span class="j">j.</span> Jacob Singer</span>
+    <span>&copy; 2026 &middot; jacobbsinger.com &middot; AI &amp; Cloud Leader</span>
+  </footer>
+
+  <script src="/script.js"></script>
+  <!-- Cloudflare Web Analytics -->
+  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "0b7124bcaf9a4046839a7f8ce56a95eb"}'></script>
+  <!-- End Cloudflare Web Analytics -->
+</body>
+</html>
