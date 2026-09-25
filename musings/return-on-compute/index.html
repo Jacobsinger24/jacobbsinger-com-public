@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Return on Compute Era &mdash; Jacob Singer</title>
+  <meta name="description" content="Controlling the cost of enterprise AI is becoming an architecture problem: what runs on frontier cloud models, what runs on local open weights, and how sensitive data stays inside the building." />
+  <meta name="author" content="Jacob Singer" />
+  <link rel="canonical" href="https://jacobbsinger.com/musings/return-on-compute/" />
+  <meta property="og:title" content="The Return on Compute Era" />
+  <meta property="og:description" content="Controlling the cost of enterprise AI is becoming an architecture problem: what runs on frontier cloud models, what runs on local open weights, and how sensitive data stays inside the building." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://jacobbsinger.com/musings/return-on-compute/" />
+  <meta property="og:site_name" content="jacobbsinger.com" />
+  <meta property="og:image" content="https://jacobbsinger.com/og-card.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Jacob Singer - Enterprise Learnings + Personal AI unlocks." />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="The Return on Compute Era" />
+  <meta name="twitter:description" content="Controlling the cost of enterprise AI is becoming an architecture problem: what runs on frontier cloud models, what runs on local open weights, and how sensitive data stays inside the building." />
+  <meta name="twitter:image" content="https://jacobbsinger.com/og-card.png" />
+  <link rel="icon" href="/favicon.ico?v=2" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=2">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=2">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#6e2310">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="inner">
+      <span>Enterprise AI learnings from the field</span>
+      <span>jacobbsinger.com</span>
+      <span id="topbar-date">Est. May 2026</span>
+    </div>
+  </div>
+
+  <nav class="topnav">
+    <div class="inner">
+      <a class="masthead" href="/" aria-label="Home">
+        <span class="j">j.</span>
+        <span class="name">Jacob Singer</span>
+      </a>
+      <ul class="blades" aria-label="Primary">
+        <li><a href="/musings/">Musings</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/#contact">Contact</a></li>
+      </ul>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle color theme">
+        <span class="icon moon" aria-hidden="true">&#9790;</span>
+        <span class="icon sun" aria-hidden="true">&#9728;</span>
+        <span class="label">Theme</span>
+      </button>
+    </div>
+  </nav>
+
+  <main class="frame">
+
+    <article class="article-page">
+      <a class="back-link" href="/musings/"><span aria-hidden="true">&larr;</span> Back to Musings</a>
+
+      <div class="article-eyebrow"><span class="num">No. 09</span> &middot; Musings of a Vibe Coder &middot; September 2026</div>
+      <h1 class="article-title">The Return on <em>Compute</em> Era</h1>
+      <p class="article-subhead">The next enterprise AI advantage is not a smarter model. It is knowing what to run in the cloud, what to run on your own hardware, and how to split the work so cost and sensitive data both stay where they belong.</p>
+      <div class="article-meta">
+        <span>By Jacob Singer</span>
+        <span class="dot">&middot;</span>
+        <span>~10 min read</span>
+        <span class="dot">&middot;</span>
+        <span>Published 25 September 2026</span>
+      </div>
+      <div class="article-tags">
+        <a class="article-tag" href="/musings/?tags=industry-thoughts">Industry Thoughts</a>
+        <a class="article-tag" href="/musings/?tags=enterprise-learnings">Enterprise Learnings</a>
+        <a class="article-tag" href="/musings/?tags=agents">Agents</a>
+      </div>
+
+      <div class="article-body">
+
+        <p>For fifteen years enterprise computing has moved in one direction. Up and out, off your own machines and into the cloud, into the metered, elastic, someone-else&rsquo;s-problem model that let a whole generation stop thinking about hardware at all. It worked. It is one of the cleanest one-way migrations the industry has ever run.</p>
+
+        <p>AI might be the first thing heavy enough to bend the arrow back. Not all the way, and not for everyone. But for a real and growing slice of the work, the cost and the data-gravity of running models are making the case to pull compute back onto hardware you own, in a way nothing has in a very long time. Local compute is getting its day again, and most enterprises have not worked out why.</p>
+
+        <p>The why shows up as two fears, and they arrive together. The first is leakage. Somebody is about to point a very capable model at the messiest, most sensitive data in the building, and no one in the room can say with confidence where that data goes once it does. The second is the bill. Everyone has heard the story, or lived it, of a promising pilot that scaled and burned a year of AI budget in a quarter, because the thing that cost a rounding error in the demo runs ten thousand times a day in production.</p>
+
+        <p>Underneath both sits one question, and it is not which model to buy. It is architectural. How do you build something that carries governance and cost control across every future use case, not just the one in front of you. How do you scale the discipline, and not only the deployment.</p>
+
+        <p>Follow that question down and it lands on a single decision the industry spent a decade training itself to skip. Where the work runs.</p>
+
+        <h2>The decade compute went invisible</h2>
+
+        <p>The move to cloud did something quiet to how we think. It took the cost of running software out of our heads.</p>
+
+        <p>The cost never left, of course. Somebody always paid it. But the whole pitch of the utility model was that you stopped watching the meter. No sizing a server, no budgeting a query, no meeting about whether a feature was worth the cycles it would burn. You wrote the code and shipped it, and the cost of one more user doing one more thing rounded so close to zero that treating it as zero was just good sense.</p>
+
+        <p>That was a good era, and I do not want to be cute about it. Making compute invisible is one of the real wins of the last fifteen years. It let people build without a tax on every keystroke. The old mainframe discipline, where you rationed machine time because machine time was scarce, faded because it no longer had to exist.</p>
+
+        <p>A web request is cheap. A database read is cheap. You could build something enormous and never once hit the sentence &ldquo;can we afford to run this at that volume,&rdquo; because the answer was always yes.</p>
+
+        <p><strong>AI is the first thing in a long while where the answer is sometimes no.</strong></p>
+
+        <p>And the move almost everyone makes when they hit that wall is the wrong one.</p>
+
+        <h2>The reflex is one big model in the cloud</h2>
+
+        <p>When the capability showed up, the instinct was to send everything to the most capable place available. Frontier model, in the cloud, priced by the token, catching every request the business could throw at it. It demos beautifully. It is the shortest line from idea to working thing. And at pilot volume it feels free, in the old familiar way, because you are running the workflow a few dozen times to show it off.</p>
+
+        <p>Then you scale it, and two problems walk in together.</p>
+
+        <p>The first is the bill. Inference is not a one-time charge you climb past. It is a meter that starts the day you deploy and never stops. Every summary, every reasoning step, every retry, every long chain of thought we now ask for, is a fresh charge on a fresh call. One query, nobody notices. But a company does not run one query. It runs the same workflow ten thousand times a day, across forty thousand people, for three years. A rounding error at that scale is not a rounding error. It is a line a CFO can read from across the room.</p>
+
+        <p>The second problem is quieter and harder. Some of that work should never have left the building at all.</p>
+
+        <p><strong>Sending everything to the biggest cloud model breaks on two things at once: the volume you cannot afford to meter, and the data you are not allowed to move.</strong></p>
+
+        <p>Cost and control. Two different pressures that happen to push in the same direction, and together they are why the enterprise answer will not be one model in one place. It will be a mix.</p>
+
+        <h2>The answer is hybrid, and it is not a compromise</h2>
+
+        <p>The architecture that actually survives contact with a real enterprise is a split. State-of-the-art models in the cloud for the work that genuinely needs frontier reasoning. Local, open-weight models on infrastructure the company controls for the work that is high-volume, routine, or sensitive. Not one or the other. Both, on purpose, with something in the middle deciding which is which.</p>
+
+        <p>This is not a way station on the road to everything-in-the-cloud. It is the destination. What makes it interesting is that the two forces driving people toward it are unrelated, and they still land in the same place.</p>
+
+        <h3>Cost: owning the metal flips the math</h3>
+
+        <p>A cloud model billed per token is pure marginal cost. You pay for every call, forever, and the bill climbs in a straight line with how much you use it. Wonderful when your volume is low or spiky. Punishing when it is high and steady, because you never stop paying and you never own anything at the end.</p>
+
+        <p>Run the model yourself and that inverts. Big cost up front, the hardware and the setup and the muscle to keep it alive. After that, one more inference costs about what the electricity costs. The meter, in any way that matters, stops.</p>
+
+        <p>That inversion is the whole argument for the repetitive middle of enterprise AI. The classification on every document. The extraction on every invoice. The summary on every ticket. The embedding of every file so somebody can search it later. Enormous, unglamorous, constant, and almost none of it needs frontier intelligence. It needs to be competent, consistent, and cheap at volume, and open-weight models quietly got good enough to clear that bar.</p>
+
+        <p>You save the expensive model for the work that earns it. The genuinely hard reasoning. The novel problem. The place where the gap between the best model and a decent one is real and worth paying for. You stop pointing the whole firehose at the priciest nozzle in the building and send only the drops that deserve it.</p>
+
+        <h3>Control: some data was never allowed to leave</h3>
+
+        <p>Now run the same split for a reason that has nothing to do with money.</p>
+
+        <p>In a regulated business the constraint is often not cost. It is that a certain kind of data is not permitted past a boundary, full stop. Patient records. Financial detail tied to a name. Anything under a residency rule or a sovereignty requirement or a contract that says this stays inside these walls. For that data, which cloud model is smartest is not even a question worth asking, because the data cannot reach any of them without crossing a line the company will not cross.</p>
+
+        <p>A local model settles it, because nothing moves. The sensitive work happens inside the boundary, on hardware the company owns, and none of it touches the wire. The model comes to the data instead of the data going to the model.</p>
+
+        <p>This is where the two ideas stop being separate and become one architecture. A single workflow can split along the sensitivity line. The steps that touch protected data run local, inside the walls, on an open-weight model. The steps that need frontier reasoning but touch nothing sensitive, the general analysis, the orchestration, the summary that names no one, run in the cloud on the best thing going. One process, two homes, divided by what each step is actually holding.</p>
+
+        <p><strong>The real question is not which model. It is which parts of this workflow can leave the building and which cannot, and then putting each part where it belongs.</strong></p>
+
+        <h2>Routing is the architecture now</h2>
+
+        <p>Once you accept the split, the hard engineering stops being the model and becomes the thing that decides. What runs where, and why.</p>
+
+        <p>The inputs are not exotic. How sensitive is the data this step touches. How hard is the thinking it needs. How often will it run. Sensitive and routine goes local without debate. Hard and not sensitive goes to the cloud frontier. High-volume routine goes local for cost even when nothing about it is private, because owning the metal is simply cheaper at that scale. The rare, hard, non-sensitive problem goes to the expensive model, because that is the one spot its price makes sense.</p>
+
+        <p>Scarce compute used to force this kind of judgment. You decided what belonged on the expensive machine, what could run somewhere cheaper, what to batch overnight. The utility model let that muscle go slack. AI is waking it back up, reshaped, because the cost and the sensitivity of the work finally made placement worth thinking about again. The companies that rebuild the muscle will outrun the ones still shipping everything to one model in one place because it was the fastest thing to stand up.</p>
+
+        <h2>Agents make the split sharper</h2>
+
+        <p>Point all of this at agents, where the field is heading, and it gets more pointed rather than less.</p>
+
+        <p>An agent task is not one call. It reasons, plans, reaches for a tool, reads what came back, reasons again, corrects, retries, checks itself. A long-running agent is a long chain of inference stacked up, and each link might touch a different kind of data. So the local-or-cloud decision is not made once per workflow. It gets made over and over inside a single run. The step that reads a protected record stays local. The step reasoning about strategy goes to the cloud. The hundreds of small tool calls stay local because there are hundreds of them. The one genuinely hard planning step gets the frontier model, because it is worth it. The agent moves between homes as it works, and the routing layer is what keeps that both affordable and safe.</p>
+
+        <p>Build that agent to send every call to the frontier cloud model and you get something expensive that also carries sensitive data across a boundary a few hundred times without anyone deciding it should. Build it hybrid and the same agent is cheaper and safer, for the same two reasons that keep pointing the same way.</p>
+
+        <h2>The honest limits</h2>
+
+        <p>Local is not free. You swap a per-token bill for the fixed cost of hardware and the real work of running it, and that work is not small. Two stacks instead of one. Open-weight models to keep current. The reliability of infrastructure you used to rent and now own. For a small shop with modest volume, cloud-only may be exactly right, and the fixed cost never pays back. Hybrid gets stronger with scale and with regulation, and weaker without either.</p>
+
+        <p>The frontier still lives in the cloud. Open weights have come a long way, far enough for a large and growing slice of the work, but the leading edge of raw capability is still set by the biggest models, and on the hardest problems the gap is real. This was never a story about replacing the cloud model. It is a story about not handing it work that never needed it.</p>
+
+        <p>And the line keeps moving. Where local ends and cloud begins shifts every quarter, because open weights keep climbing and inference keeps getting cheaper. Something that has to run in the cloud today may run at home next year. The placements will keep sliding around. Deciding placement at all is the part that stays.</p>
+
+        <h2>The closing read</h2>
+
+        <p>For a decade the smartest thing to do with the cost of compute was to stop thinking about it. The abstraction was the feature, and it is part of why software ate as much of the world as it did.</p>
+
+        <p>AI is handing some of that thinking back. Not because compute got expensive, but because we finally found a use for it hungry enough, and sensitive enough, that where the work runs is a real decision again. The advantage is sliding away from which model you picked and toward how well you split the work. What earns the frontier. What belongs on your own hardware. What your data was never going to be allowed to let leave.</p>
+
+        <p>The model got good enough to run anywhere.</p>
+
+        <p>So the ones who win will be the ones who decide, on purpose, where.</p>
+
+        <div class="article-foot">
+          <span>End of No. 09</span>
+          <a href="/musings/">More Musings &rarr;</a>
+        </div>
+
+        <p class="article-disclaimer">Views expressed are explicitly that of my own.</p>
+
+      </div>
+    </article>
+
+  </main>
+
+  <footer class="site-footer">
+    <span class="brand-foot"><span class="j">j.</span> Jacob Singer</span>
+    <span>&copy; 2026 &middot; jacobbsinger.com &middot; AI &amp; Cloud Leader</span>
+  </footer>
+
+  <script src="/script.js"></script>
+  <!-- Cloudflare Web Analytics -->
+  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "0b7124bcaf9a4046839a7f8ce56a95eb"}'></script>
+  <!-- End Cloudflare Web Analytics -->
+</body>
+</html>

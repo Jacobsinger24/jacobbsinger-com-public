@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>OG card source</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1200px; height: 630px; overflow: hidden; }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #e9e5dc;
+    color: #15140f;
+    position: relative;
+  }
+  .card {
+    width: 1200px;
+    height: 630px;
+    padding: 64px 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    background: linear-gradient(180deg, #efece4 0%, #e6e2d8 100%);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 8px;
+    background: #6e2310;
+  }
+  .top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 16px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #4f4a42;
+  }
+  .top-row .left { font-weight: 600; }
+  .top-row .right { color: #7f786c; }
+  .top-row .right strong { color: #6e2310; font-weight: 700; }
+
+  .masthead {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 26px;
+    letter-spacing: -0.01em;
+  }
+  .monogram {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border: 2px solid #15140f;
+    color: #15140f;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 1;
+    padding-bottom: 4px;
+  }
+
+  .center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+    padding: 24px 0;
+  }
+  .eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: #6e2310;
+    font-weight: 600;
+    margin-bottom: 28px;
+  }
+  h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 78px;
+    line-height: 0.98;
+    letter-spacing: -0.025em;
+    color: #15140f;
+    max-width: 1040px;
+  }
+  h1 em {
+    font-style: italic;
+    color: #6e2310;
+    font-weight: 700;
+  }
+  h1 .period { color: #6e2310; }
+
+  .footer-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-top: 2px solid #15140f;
+    padding-top: 22px;
+  }
+  .byline {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    color: #15140f;
+    letter-spacing: -0.005em;
+  }
+  .byline .role {
+    color: #4f4a42;
+    font-weight: 400;
+  }
+  .url {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 16px;
+    letter-spacing: 0.18em;
+    color: #4f4a42;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="top-row">
+      <div class="masthead">
+        <span class="monogram">j.</span>
+        <span>Jacob Singer</span>
+      </div>
+      <div class="right">Est. <strong>May 2026</strong></div>
+    </div>
+
+    <div class="center">
+      <div class="eyebrow">Musings · jacobbsinger.com</div>
+      <h1>Enterprise Learnings<br>+ <em>Personal AI</em> unlocks<span class="period">.</span></h1>
+    </div>
+
+    <div class="footer-row">
+      <div class="byline">Jacob Singer <span class="role">· Cloud GTM · Agents + Endpoints</span></div>
+      <div class="url">www.jacobbsinger.com</div>
+    </div>
+  </div>
+</body>
+</html>

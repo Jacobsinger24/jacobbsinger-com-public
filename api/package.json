@@ -1,0 +1,13 @@
+{
+  "name": "jacobbsinger-com-api",
+  "version": "1.0.0",
+  "description": "Azure Functions API for jacobbsinger.com",
+  "main": "src/functions/*.js",
+  "engines": {
+    "node": ">=18 <=20"
+  },
+  "scripts": {},
+  "dependencies": {
+    "@azure/functions": "^4.5.0"
+  }
+}

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Jacob Singer">
+  <title>Jacob Singer</title>
+  <rect x="3" y="3" width="250" height="250" rx="48" ry="48" fill="#f1ede4" stroke="#c4bdac" stroke-width="6"/>
+    <path d="M-22 -200V-92H44Q72 -92 72 -62V496H198V-88Q198 -139 168.0 -169.5Q138 -200 88 -200ZM135 554Q101 554 77.5 576.0Q54 598 54 634Q54 670 77.5 692.0Q101 714 135 714Q170 714 193.0 692.0Q216 670 216 634Q216 598 193.0 576.0Q170 554 135 554Z" transform="translate(81.425 184.944) scale(0.164577 -0.164577)" fill="#6e2310"/>
+  <path d="M150 -14Q109 -14 81.5 12.5Q54 39 54 81Q54 123 81.5 149.5Q109 176 150 176Q190 176 217.0 149.5Q244 123 244 81Q244 39 217.0 12.5Q190 -14 150 -14Z" transform="translate(125.531 184.944) scale(0.164577 -0.164577)" fill="#6e2310"/>
+</svg>

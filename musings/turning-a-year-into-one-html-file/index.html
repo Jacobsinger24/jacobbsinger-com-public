@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Turning a Year of Outcomes Into an HTML Dashboard — Jacob Singer</title>
+  <meta name="description" content="An Annual Review HTML Dashboard to showcase your impact and impress leadership." />
+  <meta name="author" content="Jacob Singer" />
+  <link rel="canonical" href="https://jacobbsinger.com/musings/turning-a-year-into-one-html-file/" />
+  <meta property="og:title" content="Turning a Year of Outcomes Into an HTML Dashboard" />
+  <meta property="og:description" content="An Annual Review HTML Dashboard to showcase your impact and impress leadership." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://jacobbsinger.com/musings/turning-a-year-into-one-html-file/" />
+  <meta property="og:site_name" content="jacobbsinger.com" />
+  <meta property="og:image" content="https://jacobbsinger.com/og-card.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Jacob Singer — Enterprise Learnings + Personal AI unlocks." />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Turning a Year of Outcomes Into an HTML Dashboard" />
+  <meta name="twitter:description" content="An Annual Review HTML Dashboard to showcase your impact and impress leadership." />
+  <meta name="twitter:image" content="https://jacobbsinger.com/og-card.png" />
+  <link rel="icon" href="/favicon.ico?v=2" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=2">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=2">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#6e2310">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="inner">
+      <span>Enterprise AI learnings from the field</span>
+      <span>jacobbsinger.com</span>
+      <span id="topbar-date">Est. May 2026</span>
+    </div>
+  </div>
+
+  <nav class="topnav">
+    <div class="inner">
+      <a class="masthead" href="/" aria-label="Home">
+        <span class="j">j.</span>
+        <span class="name">Jacob Singer</span>
+      </a>
+      <ul class="blades" aria-label="Primary">
+        <li><a href="/musings/">Musings</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/#contact">Contact</a></li>
+      </ul>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle color theme">
+        <span class="icon moon" aria-hidden="true">&#9790;</span>
+        <span class="icon sun" aria-hidden="true">&#9728;</span>
+        <span class="label">Theme</span>
+      </button>
+    </div>
+  </nav>
+
+  <main class="frame">
+
+    <article class="article-page">
+      <a class="back-link" href="/musings/"><span aria-hidden="true">&larr;</span> Back to Musings</a>
+
+      <div class="article-eyebrow"><span class="num">No. 02</span> &middot; Musings of a Vibe Coder &middot; May 2026</div>
+      <h1 class="article-title">Turning a Year of Outcomes Into <em>an HTML Dashboard.</em></h1>
+      <p class="article-subhead">An Annual Review HTML Dashboard to showcase your impact and impress leadership</p>
+      <div class="article-meta">
+        <span>By Jacob Singer</span>
+        <span class="dot">&middot;</span>
+        <span>~7 min read</span>
+        <span class="dot">&middot;</span>
+        <span>Published 17 May 2026</span>
+      </div>
+      <div class="article-tags">
+        <a class="article-tag" href="/musings/?tags=personal-ai-learnings">Personal AI Learnings</a>
+        <a class="article-tag" href="/musings/?tags=enterprise-learnings">Enterprise Learnings</a>
+        <a class="article-tag" href="/musings/?tags=agents">Agents</a>
+      </div>
+
+      <div class="article-body">
+
+        <p>Well, we&rsquo;ve reached that time of the year again, the end of the fiscal year. As such, it means that annual review season is upon us. People pushing for promotions, last Hail-Mary efforts on closing deliverables, collecting colleague feedback, pulling deals forward and pushing some out. On top of all that, we have to write out what we accomplished, how we accomplished it, and tell the story in a way that helps leadership understand our impact during people and reward conversations.</p>
+
+        <p>I&rsquo;ve typically approached this by giving my leadership a sort of &ldquo;baseball card&rdquo; or one-pager that summarizes my year. It does the job. But it&rsquo;s also easy to forget. At a certain level, everyone is producing these, and when leadership is reading 20 or 30 of them in the same format, they start to blend together.</p>
+
+        <p>This year I tried something different. I built a single HTML file. One page, four tabs, my own hero banner, hard numbers, real quotes, all branded the way I wanted. It sits in OneDrive, shares with one click, opens in any browser, and works offline. No login, no Power BI dependency, no broken links three months from now.</p>
+
+        <p>I want to take a moment to acknowledge that this is the work I built off of an idea a colleague shared with me. In a mentorship 1:1 with my colleague Sarath, we were discussing EOTY conversations with senior leadership. Sarath is the first one to show me how he was using HTML files for this specific deliverable.</p>
+
+        <p>What follows is how I built it, what made it work, and the blueprint I plan to take forward.</p>
+
+        <h2>Why one HTML file beat a deck</h2>
+
+        <p>Decks at the executive level fail in three predictable ways. They are too long. They are too templated. And they fight your story rather than carry it.</p>
+
+        <p>The HTML approach fixes all three.</p>
+
+        <p>It is <strong>scannable.</strong> A senior leader opens the file, sees the hero stats and the four headline KPIs in the first second, and decides on the spot whether to go deeper. No clicking through fourteen slides to find the punchline.</p>
+
+        <p>It is <strong>layered.</strong> The first screen is the executive summary. The tabs below it are where the proof lives. If the reader cares, they go in. If they do not, they close the tab and they still got the answer.</p>
+
+        <p>It is <strong>mine.</strong> A deck template makes me look like everyone else. My dashboard looks like me. The colors are mine. The voice is mine. The way I frame impact is mine. That carries signal.</p>
+
+        <p>And practically, it is <strong>portable.</strong> One file. No external dependencies. The headshot is base64&rsquo;d into the HTML. The whole thing is forty KBs. I attach it in an email or drop it in a chat and it works.</p>
+
+        <h2>What&rsquo;s actually in it</h2>
+
+        <p>Four sections, top to bottom:</p>
+
+        <ul>
+          <li><strong>A hero banner.</strong> Name, role, tagline, five headline stats of the year. This is what a senior leader sees first.</li>
+          <li><strong>A KPI row.</strong> Four tiles immediately under the banner. Each one a number that matters with one line of context.</li>
+          <li><strong>Four tabs.</strong> Overview, Colleague Feedback, Deals Won, Thought Leadership.</li>
+          <li><strong>A footer.</strong> Source, scope, the boring disclaimer.</li>
+        </ul>
+
+        <p>The Overview tab is the closest thing to a one pager. It has a performance band at the top (budget, forecast, variance), a &ldquo;Year at a glance&rdquo; paragraph, three hero quotes from colleagues, a map of my work against the published charter, and a 2x2 grid of priorities with what I led against each one.</p>
+
+        <p>The other three tabs are the receipts. Quotes verbatim. Deals in a sortable looking table with deal context written in plain English. Speaking engagements and field enablement with attendance numbers. Anyone challenging a claim on the front page can find the evidence two clicks away. These are themes built specific to my role, but this reusable template would support you updating with your core themes, pillars, or OKRs you care about showcasing impact towards.</p>
+
+        <h2>The blueprint I wrote first</h2>
+
+        <p>I will say something that sounds backwards. Before I asked the AI to build the dashboard, I wrote the blueprint.</p>
+
+        <p>Not the data. The structure. The editorial rules. The voice. The exact things I wanted the AI to do, and the exact things I did not want it to do.</p>
+
+        <p>A few examples from the file I handed over:</p>
+
+        <ul>
+          <li>No dashes anywhere in the visible copy. Replace with a comma, a space, or rewrite the sentence. I did not want it reading like AI output.</li>
+          <li>&ldquo;and&rdquo; not &ldquo;&amp;&rdquo; in section titles. The ampersand is reserved for branded names.</li>
+          <li>Numbers always with thousands separators. Dates always in <code>DD MMM YYYY</code> format.</li>
+          <li>Verbatim quotes only inside attributed quote cards. Names, roles, dates.</li>
+          <li>No emojis in headings.</li>
+        </ul>
+
+        <p>That blueprint was about a thousand words. It took me about 30-minutes to flesh it out. I used one of my favorite agents &ldquo;Prompt Buddy&rdquo; to help me get my raw thoughts better organized. This saved me hours of correcting the AI output, simply by giving it very clear initial instructions.</p>
+
+        <p><strong>Lesson: the more constrained your brief, the more useful the output. Spend the 30 minutes up front. You will thank yourself in iteration three.</strong></p>
+
+        <h2>The stack I used</h2>
+
+        <p>Same setup as the website itself, candidly. Nothing fancy.</p>
+
+        <p><strong>VS Code as the cockpit.</strong> This is where everything happens. The HTML file is one file, and VS Code makes it trivial to scroll through, edit, preview, and ship. I run a live preview in the side panel so any change I make shows up the second I save.</p>
+
+        <p><strong>GitHub Copilot inside VS Code.</strong> This is the engineer. I describe the change I want in plain English (&ldquo;the KPI tile for closed deals is showing the wrong number, pull it from the second row of the deals CSV instead&rdquo;), and Copilot makes the edit across the file. When something does not look right, I screenshot and paste it in, and ask why. It explains.</p>
+
+        <p><strong>A second AI chat open on the side.</strong> I keep a separate AI assistant open in another window for higher level questions. Things like &ldquo;is this structure too sales coded for an executive read&rdquo; or &ldquo;rewrite this paragraph in fewer words, keep the voice.&rdquo; Sometimes you want a brain that is not currently knee deep in your file. Copilot is great at the work in front of it. The side chat is great at sanity checking the work.</p>
+
+        <p>That is the entire stack. One editor, one AI in the file, one AI on the side. Nothing else.</p>
+
+        <h2>The build, in plain English</h2>
+
+        <p>The actual creation went something like this.</p>
+
+        <p>Building this prompt, I told it specifically what to look for. I uploaded our kickoff PPT which contained our core themes, pillars, individual metrics. I pointed my prompt at specific SharePoint files and internal documents that held information on performance. I included relevant PowerBI reports and URLs to colleague feedback. I then provided a deep and robust initial prompt to give the context of what I was trying to do, who I was trying to do it for, and where the information lived to successfully do so. The Initial prompt was nearly 500 words by the time I was done, but it was by far the most critical part. I knew I would need to iterate and trim, but I wanted a working mold to start from.</p>
+
+        <p>The first version came back in about ninety seconds. It was 80% there. The hero banner looked right. The KPI tiles had the wrong numbers in two places (the AI had pulled an unrelated row from the data file). The deals table was sorted backwards. One quote attribution had a wrong date.</p>
+
+        <p>Fixing the four problems took five minutes each. Twenty minutes later it was clean.</p>
+
+        <p>Then I spent another 2 hours on polish. Color tweaks. A dark mode toggle. Aligning the tagline under the headshot pixel by pixel because the eye notices. The kind of work where AI is fast but your taste is doing the steering. You will no doubt go back and re-write or recontextualize data or talking points that the AI pulls. The AI is great at getting you going, but this is where the human aspect comes in. If you&rsquo;re going to put this in front of SLT, you better ensure the data is correct, the learnings are contextualized, and the details are coherent.</p>
+
+        <p>End to end, half an afternoon to get it 90%. Five to six hours all in to final product.</p>
+
+        <h2>What made it actually work</h2>
+
+        <p>A few decisions paid for themselves.</p>
+
+        <p><strong>Self contained file.</strong> Inlining the headshot as base64 was the single best call I made. No broken images six months later. No &ldquo;where is that asset hosted again&rdquo; problem. The dashboard is the dashboard.</p>
+
+        <p><strong>Strict editorial rules.</strong> The no-dashes rule sounds silly until you read AI output without it. Once I enforced it the prose stopped sounding like AI and started sounding like me.</p>
+
+        <p><strong>Map every claim to the charter.</strong> The Overview tab maps my work directly against the three pillars and four core priorities published for my role this fiscal year. That is the trick that makes the dashboard feel like accountability rather than self promotion. The claims are not &ldquo;look what I did,&rdquo; they are &ldquo;here is the assignment, and here is the proof I did it.&rdquo;</p>
+
+        <p><strong>Receipts over rhetoric.</strong> No adjectives doing heavy lifting. I do not call myself a leader. I show three quotes from colleagues describing leadership, with names and dates. The reader makes the judgment.</p>
+
+        <h2>What I would do differently</h2>
+
+        <p>A couple of things I would change next time.</p>
+
+        <p>I built it once at the end of the year. That was a mistake. The right move is to keep a working version updated quarterly. The data is fresh, the quotes are recent, and you are not racing the calendar in May.</p>
+
+        <p>I did not save the conversation history with the AI. When I went to rebuild a section weeks later, I lost the thread of why I had structured something a certain way. Now I keep a markdown log of the prompts that worked. (This is also what the blueprint does, for the record.)</p>
+
+        <p>I waited too long to share a draft for feedback. I should have shown the half-built version to two or three trusted colleagues a week earlier. The polish lap is more valuable when someone else has poked at the substance first.</p>
+
+        <h2>The blueprint is reusable</h2>
+
+        <p>The thing I am most proud of is not the dashboard itself. It is that the blueprint outlived it.</p>
+
+        <p>I sanitized the file. Stripped every customer name, every dollar figure, every quote, every internal acronym. Replaced them with placeholders. Now the blueprint is the structure, the design system, the editorial rules, and the prompts, with the proprietary stuff redacted.</p>
+
+        <p>That blueprint lives in a public GitHub repository. Anyone in any role can clone it, drop in their own data, and produce their own dashboard. Salespeople, engineers, marketers, designers. The structure works because the structure is about how senior leaders read, not about what I do for a living.</p>
+
+        <p>This is the part of vibe coding that I think gets undersold. The artifacts you produce are reusable. The prompt is reusable. The blueprint is reusable. The styling decisions are reusable. You are not building once. You are building a system you keep adding to.</p>
+
+        <h2>Closing</h2>
+
+        <p>Preparing for annual reviews is usually one of the worst parts of the year. You scramble in June, you forget half of what you did, you produce a deck that no one remembers a week later. There is a better version of this.</p>
+
+        <p>You do not need to be a designer, nor do you need to write code. You need to know what you did, what a senior leader cares about, and you need an AI that will translate the first into the second under your direction.</p>
+
+        <p>If you have a fiscal year ending soon, this is the easiest moment in history to put together a real impact artifact. Twelve months of work in one HTML file. Half an afternoon.</p>
+
+        <p>The blueprint is on my <a href="https://github.com/Jacobsinger24/fy-impact-dashboard-blueprint" target="_blank" rel="noopener">GitHub</a>. Go take it.</p>
+
+        <div class="article-foot">
+          <span>End of No. 02</span>
+          <a href="/musings/">More Musings &rarr;</a>
+        </div>
+
+        <p class="article-disclaimer">Views expressed are explicitly that of my own.</p>
+
+      </div>
+    </article>
+
+  </main>
+
+  <footer class="site-footer">
+    <span class="brand-foot"><span class="j">j.</span> Jacob Singer</span>
+    <span>&copy; 2026 &middot; jacobbsinger.com &middot; AI &amp; Cloud Leader</span>
+  </footer>
+
+  <script src="/script.js"></script>
+  <!-- Cloudflare Web Analytics -->
+  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "0b7124bcaf9a4046839a7f8ce56a95eb"}'></script>
+  <!-- End Cloudflare Web Analytics -->
+</body>
+</html>
